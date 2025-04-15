@@ -1,0 +1,113 @@
+<header class="fl-between-wrap">
+  <picture>
+    <img src="/images/logo.png" alt="" />
+  </picture>
+  <input type="checkbox" name="" id="menu" />
+  <label for="menu">
+    <i class="bi bi-list" id="abrir"></i>
+    <i class="bi bi-x-lg" id="cerrar"></i>
+  </label>
+
+  <nav class="fl-between-wrap">
+    <a href="">Inicio</a>
+    <a href="">Acerca de</a>
+    <a href="">Servicios</a>
+    <a href="">Testimonios</a>
+    <a href="">Contacto</a>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    padding-inline: 10%;
+    backdrop-filter: var(--blur);
+    z-index: 100;
+  }
+
+  picture {
+    width: 200px;
+    height: 100%;
+  }
+  picture img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  nav {
+    width: fit-content;
+  }
+  a {
+    width: fit-content;
+    padding: calc(var(--space) / 2);
+    color: #000;
+  }
+  input {
+    display: none;
+  }
+
+  label {
+    font-size: calc(var(--space) * 2);
+    display: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    header {
+      position: fixed;
+      background: var(--primaryColorLight);
+      height: 8dvh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      z-index: 100;
+    }
+    nav {
+      position: absolute;
+      border-top: solid 2px var(--primaryColorBase);
+      top: 0;
+      left: 0px;
+      width: 50dvw;
+      height: 100dvh;
+      flex-direction: column !important;
+      align-items: start !important;
+      padding: var(--space);
+      background: var(--primaryColorLight);
+      z-index: 90;
+      transition: all 0.3s linear;
+      box-shadow: 9px 8px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+    input[type="checkbox"] ~ nav {
+      transform: translateX(-700px) !important;
+    }
+    label {
+      display: block;
+      transition: all 0.3s linear;
+      cursor: pointer;
+    }
+    input[type="checkbox"] ~ label #cerrar {
+      display: none !important;
+    }
+
+    input[type="checkbox"] ~ label #abrir {
+      display: block !important;
+    }
+
+    input[type="checkbox"]:checked ~ label #cerrar {
+      display: block !important;
+    }
+    input[type="checkbox"]:checked ~ label #abrir {
+      display: none !important;
+    }
+    img {
+      filter: drop-shadow(0px 1px 2px var(--secondaryColorLight));
+    }
+
+    input[type="checkbox"]:checked ~ nav {
+      transform: translateX(0px) !important;
+    }
+  }
+</style>

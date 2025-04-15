@@ -1,0 +1,53 @@
+<aside class="fl-column">
+  <h2>Contacto</h2>
+  <h4>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates id
+    ratione perspiciatis nulla enim illum!
+  </h4>
+  <input type="text" placeholder="Nombre" />
+  <textarea placeholder="Mensaje" maxlength="200"></textarea>
+</aside>
+
+<style>
+  aside {
+    width: 50%;
+    margin-inline: auto;
+    margin-block: calc(var(--space) * 2);
+  }
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+  input {
+    outline: 2px solid transparent;
+    width: 100%;
+    padding: var(--space);
+    font-size: var(--space);
+    border: none;
+    border-bottom: 2px solid var(--secondaryColorDark);
+    transition: all 0.3s linear;
+  }
+  input:focus {
+    outline: 2px solid var(--secondaryColorDark);
+  }
+
+  textarea {
+    outline: 2px solid transparent;
+    width: 100%;
+    min-height: 200px;
+    field-sizing: content;
+    padding: var(--space);
+    border: none;
+    border-bottom: 2px solid var(--secondaryColorDark);
+    transition: all 0.3s linear;
+  }
+  textarea:focus {
+    outline: 2px solid var(--secondaryColorDark);
+  }
+
+  @media screen and (max-width: 800px) {
+    aside {
+      width: 80%;
+    }
+  }
+</style>

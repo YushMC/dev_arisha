@@ -1,0 +1,89 @@
+---
+import LinksMain from "./linksMain.astro";
+---
+
+<div class="frontPage">
+  <div class="cuadrado"></div>
+  <div class="gd-2">
+    <div class="container_image">
+      <div class="imagen">
+        <img
+          src="https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="container_text fl-column">
+      <h1>Tu Negocio que quieres</h1>
+      <h2>De manera simple</h2>
+      <div class="fl-end-wrap">
+        <LinksMain link="#" text="Comencemos" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .frontPage {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    padding-block: calc(var(--space) * 10);
+    padding-inline: 10%;
+    overflow: hidden;
+  }
+
+  .cuadrado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primaryColorLight);
+    width: 30%;
+    height: 30dvh;
+    z-index: -2;
+  }
+
+  .container_front_page {
+    width: 100%;
+  }
+  .imagen {
+    width: 80%;
+    margin: auto;
+    padding: var(--space);
+    background: var(--secondaryColorBase);
+    position: relative;
+  }
+
+  .imagen::after {
+    content: "";
+    top: 20px;
+    left: -20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--secondaryColorDark);
+    z-index: -1;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .container_text h2 {
+    font-family: "Licorice", cursive !important;
+    font-size: calc(var(--space) * 4);
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @media screen and (max-width: 800px) {
+    .cuadrado {
+      width: 100%;
+    }
+    .gd-2 {
+      gap: 50px;
+    }
+  }
+</style>

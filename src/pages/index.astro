@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import SectionMain from "../components/index/SectionMain.astro";
+import SectionWithSwiper from "../components/index/SectionWithSwiper.vue";
+import FrontPage from "../components/FrontPage.astro";
+import SectionSecondary from "../components/index/sectionSecondary.astro";
+import SectionThree from "../components/index/sectionThree.astro";
+import Contact from "../components/Contact.astro";
+
+const isAdult = (num: number) => {
+  return num >= 19;
+};
+const isAdult2 = (num: number) => {
+  return { adult: num >= 19 };
+};
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="Inicio">
+  <FrontPage />
+  <main>
+    <SectionMain />
+    <SectionSecondary />
+    <SectionThree />
+    <SectionWithSwiper client:only="vue" />
+    <Contact />
+  </main>
+</Layout>
+
+<style></style>

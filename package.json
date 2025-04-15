@@ -1,0 +1,18 @@
+{
+  "name": "dev_arisha_site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^5.0.7",
+    "astro": "^5.5.2",
+    "astro-google-fonts-optimizer": "^0.2.2",
+    "swiper": "^11.2.5",
+    "vue": "^3.5.13"
+  }
+}

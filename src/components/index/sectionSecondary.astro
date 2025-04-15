@@ -1,0 +1,59 @@
+<section>
+  <picture>
+    <img src="/images/compu.jpg" alt="" />
+  </picture>
+  <aside class="fl-column">
+    <h2>No estas solo en este viaje</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
+      iusto veniam culpa libero iure architecto dolorum voluptatum tenetur
+      dolores perspiciatis?
+    </p>
+    <h2>Tu próximo paso</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
+      sapiente!
+    </p>
+  </aside>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+  }
+
+  picture {
+    width: 100%;
+    height: 100%;
+    border-bottom: solid 5px var(--primaryColorBase);
+    border-right: solid 5px var(--primaryColorBase);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4/3;
+  }
+  aside {
+    border-top: solid 5px var(--primaryColorBase);
+    padding-inline: calc(var(--space) * 3);
+    padding-block: calc(var(--space) * 5);
+  }
+
+  @media screen and (max-width: 800px) {
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    picture {
+      border-right: none;
+      border-top: solid 5px var(--primaryColorBase);
+    }
+    aside {
+      border-top: none;
+      padding-block: 0px;
+    }
+  }
+</style>

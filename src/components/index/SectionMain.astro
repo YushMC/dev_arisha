@@ -1,0 +1,88 @@
+---
+import LinksMain from "../../components/linksMain.astro";
+
+const { withSwiper } = Astro.props;
+---
+
+<section class="st-1">
+  <article>
+    <picture class="fl-center">
+      <img
+        src="https://img.freepik.com/vector-premium/silueta-sobre-fondo-blanco-mujer-caminando_769373-11314.jpg"
+        alt=""
+      />
+    </picture>
+    <aside class="fl-column">
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae
+        voluptate beatae harum, modi velit eveniet. Repudiandae deserunt
+        consequatur assumenda odio.
+      </p>
+      <h2>Hola, Soy Arisha</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum rem
+        quae dolor repellat ipsam mollitia praesentium blanditiis ex, velit
+        officia.
+      </p>
+      <h2>Empecemos</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint
+        voluptatum, libero vitae similique amet pariatur facere laboriosam sit
+        veritatis.
+      </p>
+      <LinksMain link="#" text="Acerca de mi" />
+    </aside>
+  </article>
+</section>
+
+<style>
+  .st-1 {
+    width: 100%;
+    background: var(--secondaryColorLight);
+    padding-inline: 10%;
+    padding-block: none;
+    margin: none;
+  }
+  .st-1 article {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: #fff;
+    padding-block: var(--space);
+  }
+  .st-1 picture {
+    width: 100%;
+    background: #fff;
+  }
+
+  .st-1 picture img {
+    width: 50%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 100%;
+    border: solid 2px var(--secondaryColorDark);
+  }
+
+  .st-1 p {
+    margin-block: var(--space);
+  }
+
+  aside {
+    padding-block: calc(var(--space) * 3);
+    padding-inline: calc(var(--space) * 2);
+  }
+
+  @media screen and (max-width: 800px) {
+    .st-1 article {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space);
+      padding-inline: var(--space);
+    }
+  }
+
+  .container_swiper {
+    width: 100%;
+    background: #fff !important;
+    padding: var(--space);
+  }
+</style>

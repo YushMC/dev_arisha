@@ -1,0 +1,93 @@
+<footer class="fl-column">
+  <div class="fl-evenly-wrap">
+    <div class="container fl-column">
+      <img src="/images/logo.png" alt="" />
+    </div>
+    <div class="container fl-column">
+      <h2>Conoce a Arisha</h2>
+      <a href="">Sobre Arisha</a>
+      <a href="">Servicios</a>
+      <a href="">Testimonios</a>
+    </div>
+    <div class="container fl-column">
+      <h2>Contacta a Arisha</h2>
+      <a href="">+52 456 789 8145</a>
+      <a href="mailto:contacto@arisha.com">contacto@arisha.com</a>
+    </div>
+    <div class="container fl-evenly-wrap">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-whatsapp"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-threads-fill"></i>
+      <i class="bi bi-twitter-x"></i>
+    </div>
+  </div>
+  <hr />
+  <div class="fl-evenly-wrap xd">
+    <h2>©2025 - 2030 Arisha Awo Wellness. Todos los derechos reservados</h2>
+    <h3>
+      Powered By <a href="https://nuevaeradigital.mx/" target="_blank"
+        >Nueva Era Digtal</a>
+    </h3>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: var(--primaryColorBase);
+    padding: var(--space);
+  }
+
+  .container {
+    width: 300px;
+  }
+
+  .container > img {
+    width: 100%;
+
+    filter: drop-shadow(0px 1px 2px var(--secondaryColorLight));
+  }
+  .container > i {
+    color: var(--secondaryColorLight);
+    font-size: calc(var(--space) * 2);
+  }
+
+  .container > a {
+    color: #fff;
+  }
+
+  h2 {
+    color: var(--secondaryColorLight);
+  }
+
+  hr {
+    width: 100%;
+
+    height: 1px;
+    background: var(--secondaryColorLight);
+    border: none;
+  }
+
+  .fl-evenly-wrap h2 {
+    width: fit-content;
+    padding: calc(var(--space) / 2);
+  }
+
+  .fl-evenly-wrap h3 {
+    color: #fff;
+  }
+
+  .fl-evenly-wrap h3 a {
+    color: var(--secondaryColorLight);
+  }
+  @media screen and (max-width: 800px) {
+    .xd {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    .xd h2 {
+      width: 100%;
+      text-align: center !important;
+    }
+  }
+</style>
