@@ -22,7 +22,7 @@ Para iniciar, es necesario clonar este repositorio e instalar las dependencias c
 
 Dentro de la carpeta `assets/jsons`, existen 6 archivos `.json` donde se debe colocar la información acerca de la persona, imagenes, descripciones, testimonios, contacto y redes sociales, así como las etiquetas SEO.
 
-**El proyecto debe funcionar coorrectamente con esta configuración**. Pero si hay inconvenientes, a continuación se menciona la estructura interna y otras funciones.
+> [!NOTE] > **El proyecto debe funcionar coorrectamente con esta configuración**. Pero si hay inconvenientes, a continuación se menciona la estructura interna y otras funciones.
 
 ## Desarrollo
 
@@ -38,7 +38,6 @@ Los archivos principales son:
   ![](public/tutorial/1.png)
 
 - **Pages/**: Al colocar un archivo, este se convierte de manera inmediata en una ruta. _los archivos se referencian como un link de html normal_, `href="[nombreDelArchivo]"`
-  `Para colocar los atributos SEO se asignan desde los parametros creados en los layouts ` ![](public/tutorial/2.png) Los componentes se importan desde la carpeta de componentes y pueden llamarse dentro del **layout** ![](public/tutorial/3.png)
 
 ## Notas adicionales
 
