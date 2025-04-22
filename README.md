@@ -22,7 +22,8 @@ Para iniciar, es necesario clonar este repositorio e instalar las dependencias c
 
 Dentro de la carpeta `assets/jsons`, existen 6 archivos `.json` donde se debe colocar la información acerca de la persona, imagenes, descripciones, testimonios, contacto y redes sociales, así como las etiquetas SEO.
 
-> [!NOTE] > **El proyecto debe funcionar coorrectamente con esta configuración**. Pero si hay inconvenientes, a continuación se menciona la estructura interna y otras funciones.
+> [!NOTE]
+> **El proyecto debe funcionar coorrectamente con esta configuración**. Pero si hay inconvenientes, a continuación se menciona la estructura interna y otras funciones.
 
 ## Desarrollo
 
