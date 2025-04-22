@@ -1,30 +1,49 @@
+---
+import infoArisha from "./../assets/jsons/infoArisha.json"
+
+const information = infoArisha[1]
+---
 <footer class="fl-column">
   <div class="fl-evenly-wrap">
     <div class="container fl-column">
-      <img src="/images/logo.png" alt="" />
+      <img src="images/logo.webp" alt="" />
     </div>
     <div class="container fl-column">
       <h2>Conoce a Arisha</h2>
-      <a href="">Sobre Arisha</a>
-      <a href="">Servicios</a>
-      <a href="">Testimonios</a>
+      <a href="#arisha">Sobre Arisha</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#testimonios">Testimonios</a>
     </div>
     <div class="container fl-column">
       <h2>Contacta a Arisha</h2>
-      <a href="">+52 456 789 8145</a>
-      <a href="mailto:contacto@arisha.com">contacto@arisha.com</a>
+      {information.tel?.trim() !== '' &&  (
+      <a href={"tel:"+ information.tel}>{ information.tel }</a>
+      )}
+      {information.email?.trim() !== '' &&  (
+      <a href={"mailto:"+ information.email}>{information.email}</a>
+    )}
     </div>
     <div class="container fl-evenly-wrap">
-      <i class="bi bi-facebook"></i>
-      <i class="bi bi-whatsapp"></i>
-      <i class="bi bi-instagram"></i>
-      <i class="bi bi-threads-fill"></i>
-      <i class="bi bi-twitter-x"></i>
+      {information.facebook?.trim() !== '' &&  (
+      <a href={information.facebook}><i class="bi bi-facebook"></i></a>
+    )}
+    {information.whatsapp?.trim() !== '' &&  (
+      <a href={information.whatsapp}><i class="bi bi-whatsapp"></i></a>
+    )}
+    {information.instagram?.trim() !== '' &&  (
+      <a href={information.instagram}><i class="bi bi-instagram"></i></a>
+    )}
+    {information.threads?.trim() !== '' &&  (
+      <a href={information.threads}><i class="bi bi-threads-fill"></i></a>
+      )}
+  {information.twitter?.trim() !== '' &&  (
+      <a href={information.twitter}><i class="bi bi-twitter-x"></i></a>
+    )}
     </div>
   </div>
   <hr />
   <div class="fl-evenly-wrap xd">
-    <h2>©2025 - 2030 Arisha Awo Wellness. Todos los derechos reservados</h2>
+    <h2>©2025 Arisha Awo Wellness. Todos los derechos reservados</h2>
     <h3>
       Powered By <a href="https://nuevaeradigital.mx/" target="_blank"
         >Nueva Era Digtal</a>
@@ -54,6 +73,10 @@
 
   .container > a {
     color: #fff;
+    i {
+      color: var(--secondaryColorLight);
+      font-size: calc(var(--space) * 2);
+    }
   }
 
   h2 {

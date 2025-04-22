@@ -1,5 +1,6 @@
-<script setup lang="ts">
+<script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import testimonios from "../../assets/jsons/testimonios.json";
 
 // Importar estilos de Swiper
 import "swiper/css";
@@ -15,7 +16,7 @@ const modules = [EffectFade, Navigation, Pagination];
 </script>
 
 <template>
-  <div class="container_swiper fl-column">
+  <div class="container_swiper fl-column" id="testimonios">
     <h2>Testimonios</h2>
     <Swiper
       :spaceBetween="50"
@@ -26,35 +27,16 @@ const modules = [EffectFade, Navigation, Pagination];
       :loop="true"
       class="my-swiper"
     >
-      <SwiperSlide class="fl-column">
+      <SwiperSlide
+        class="fl-column"
+        v-for="testimonio in testimonios"
+        :key="testimonio.id"
+      >
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-          nihil optio omnis, molestiae dolorem, totam recusandae magni quis
-          sequi deleniti iure, amet incidunt! Libero, perferendis. Placeat magni
-          voluptates eum corporis.
+          {{ testimonio.testimonio }}
         </p>
 
-        <h5>Lorem</h5>
-      </SwiperSlide>
-      <SwiperSlide>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-          nihil optio omnis, molestiae dolorem, totam recusandae magni quis
-          sequi deleniti iure, amet incidunt! Libero, perferendis. Placeat magni
-          voluptates eum corporis.
-        </p>
-
-        <h5>Lorem</h5>
-      </SwiperSlide>
-      <SwiperSlide>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-          nihil optio omnis, molestiae dolorem, totam recusandae magni quis
-          sequi deleniti iure, amet incidunt! Libero, perferendis. Placeat magni
-          voluptates eum corporis.
-        </p>
-
-        <h5>Lorem</h5>
+        <h5>{{ testimonio.nombre }}</h5>
       </SwiperSlide>
     </Swiper>
   </div>

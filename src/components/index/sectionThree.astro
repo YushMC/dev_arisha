@@ -1,59 +1,35 @@
 ---
 import LinksMain from "../linksMain.astro";
+import images from "./../../assets/jsons/imagesSections.json"
+import services from "./../../assets/jsons/servicios.json"
+const allImages = images;
 ---
 
-<section>
+<section id="servicios">
   <article class="fl-column">
     <h2 style="text-align: center;width:100%;">Servicios</h2>
     <div class="fl-evenly-wrap">
+      {services.map(service => (
       <div class="card fl-column">
         <picture>
           <img
-            src="https://i0.wp.com/mextours.mx/v2/wp-content/uploads/2017/08/Mexico-arco-cabo-san-lucas.jpg?ssl=1"
+            src={service.image}
             alt=""
           />
-          <h3>Servicio 1</h3>
+          <h3>{service.title}</h3>
           <p>
-            Lorem ipsum dolor sit amet.
-            <br /><br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.
+            {service.description}
           </p>
         </picture>
       </div>
-      <div class="card fl-column">
-        <picture>
-          <img
-            src="https://i0.wp.com/mextours.mx/v2/wp-content/uploads/2017/08/Mexico-arco-cabo-san-lucas.jpg?ssl=1"
-            alt=""
-          />
-          <h3>Servicio 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet.
-            <br /><br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.
-          </p>
-        </picture>
-      </div>
-      <div class="card fl-column">
-        <picture>
-          <img
-            src="https://i0.wp.com/mextours.mx/v2/wp-content/uploads/2017/08/Mexico-arco-cabo-san-lucas.jpg?ssl=1"
-            alt=""
-          />
-          <h3>Servicio 3</h3>
-          <p>
-            Lorem ipsum dolor sit amet.
-            <br /><br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, vitae.
-          </p>
-        </picture>
-      </div>
+      ))}
     </div>
-
-    <LinksMain text="Descubre más" link="#" />
+ {services.length > 3 &&  (
+    <LinksMain text="Descubre más" link="#inicio" />
+    )}
   </article>
   <picture class="main_image fl-center">
-    <img src="/images/services.jpg" alt="" />
+    <img src={allImages.imageSectionServices} alt="" />
   </picture>
 </section>
 

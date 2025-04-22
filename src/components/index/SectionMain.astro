@@ -1,36 +1,31 @@
 ---
 import LinksMain from "../../components/linksMain.astro";
+import Arisha from "./../../assets/jsons/infoArisha.json";
+import images from "./../../assets/jsons/imagesSections.json"
 
-const { withSwiper } = Astro.props;
+const allImages = images;
+const infoArisha = Arisha[0];
+
 ---
 
-<section class="st-1">
+<section class="st-1" id="arisha">
   <article>
     <picture class="fl-center">
       <img
-        src="https://img.freepik.com/vector-premium/silueta-sobre-fondo-blanco-mujer-caminando_769373-11314.jpg"
+        src={allImages.imageSectionArisha}
         alt=""
       />
     </picture>
     <aside class="fl-column">
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae
-        voluptate beatae harum, modi velit eveniet. Repudiandae deserunt
-        consequatur assumenda odio.
-      </p>
       <h2>Hola, Soy Arisha</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum rem
-        quae dolor repellat ipsam mollitia praesentium blanditiis ex, velit
-        officia.
+        {infoArisha.description}
       </p>
       <h2>Empecemos</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa sint
-        voluptatum, libero vitae similique amet pariatur facere laboriosam sit
-        veritatis.
+       {infoArisha.phrase}
       </p>
-      <LinksMain link="#" text="Acerca de mi" />
+      <LinksMain link="#servicios" text="Servicios" />
     </aside>
   </article>
 </section>

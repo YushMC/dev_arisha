@@ -1,48 +1,57 @@
-# Astro Starter Kit: Basics
+# Página web de Arisha
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este sitio web utiliza astro como framework principal y css, la idea es en usar el meno js posible.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+> [!NOTE]
+> Cuenta con carrusel de imagenes utilizado la librería **swiper js** y un complemeto con **Vue JS**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Instalación
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Requisitos de instalación
 
-## 🚀 Project Structure
+- Node JS
+- Editor de código
 
-Inside of your Astro project, you'll see the following folders and files:
+### Proceso de instalación
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Para iniciar, es necesario clonar este repositorio e instalar las dependencias con:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+`npm install`
 
-## 🧞 Commands
+## Colocar informacion
 
-All commands are run from the root of the project, from a terminal:
+Dentro de la carpeta `assets/jsons`, existen 6 archivos `.json` donde se debe colocar la información acerca de la persona, imagenes, descripciones, testimonios, contacto y redes sociales, así como las etiquetas SEO.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**El proyecto debe funcionar coorrectamente con esta configuración**. Pero si hay inconvenientes, a continuación se menciona la estructura interna y otras funciones.
 
-## 👀 Want to learn more?
+## Desarrollo
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Estructura de archivos
+
+Los archivos principales son:
+
+- **Assets/**: que contienen los archivos de estilos css generales en styles/main.css
+
+- **Components/**: fragmentos de código que pueden ser reutilizados en otros archivos. **Estos archivos estan agrupados por página:** components/index, los que estan fuera son los más generales.
+
+- **Layouts/**: Es el archivo base de cada página. **Los datos para SEO se llaman a travez de atributos desde el lugar que se implementan**
+  ![](public/tutorial/1.png)
+
+- **Pages/**: Al colocar un archivo, este se convierte de manera inmediata en una ruta. _los archivos se referencian como un link de html normal_, `href="[nombreDelArchivo]"`
+  `Para colocar los atributos SEO se asignan desde los parametros creados en los layouts ` ![](public/tutorial/2.png) Los componentes se importan desde la carpeta de componentes y pueden llamarse dentro del **layout** ![](public/tutorial/3.png)
+
+## Notas adicionales
+
+los archivos de estructura como lo es: **layouts**, **componentes** y **paginas** deben llevar el tipo de archivo `.astro`
+
+los archivos `.astro` no es necesario agregarlos a un template para los HTML, los scripts pueden estar dentro de una etiqueta `<script></script>` o entre **3 guiones medios** `---`
+
+Los estilos puden estar dentro de cada archivo `.astro` y es solo con colocar la etiqueta `<style></style>`
+
+Los archivos publicos se encuentran en la carpeta `public/`
+
+# Producción
+
+para generar los archivos estáticos, se debe ejecutar el comando
+
+`npm run build`

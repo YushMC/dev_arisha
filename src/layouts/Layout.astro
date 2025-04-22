@@ -1,9 +1,23 @@
 ---
-interface Props {
-  title: string;
+interface SEO{
+  title: string,
+  description: string,
+  url: string,
+  icon: string,
+  keywords: string,
+  image: string
+}
+interface FRONT_PAGE{
+  imageFrontPage: string;
+  imageSectionArisha: string;
 }
 
-const { title } = Astro.props;
+import SeoInfo from './../assets/jsons/seo.json'; // ruta relativa correcta
+import frontPage from "./../assets/jsons/imagesSections.json"
+
+const dataFrontPage: FRONT_PAGE = frontPage
+const siteInfo: SEO = SeoInfo;
+
 
 import ClientRouter from "astro/components/ClientRouter.astro";
 
@@ -18,9 +32,28 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <meta name="description" content={siteInfo.description || "Descripción por defecto para la página."}>
+    <meta name="keywords" content={siteInfo.keywords || "palabra clave 1, palabra clave 2, palabra clave 3"}>
+    <meta name="author" content="Tu Nombre o Empresa">
+    <meta property="og:title" content={siteInfo.title || "Título por defecto"} />
+    <meta property="og:description" content={siteInfo.description || "Descripción por defecto"} />
+    <meta property="og:image" content={siteInfo.image || "/default-image.jpg"} />
+    <meta property="og:url" content={siteInfo.url || "https://tusitio.com"} />
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content={siteInfo.url ||"https://tusitio.com"}>
+    <meta property="twitter:url" content={siteInfo.url || "https://tusitio.com"}>
+    <meta name="twitter:title" content={siteInfo.title || "Título por defecto"} >
+    <meta name="twitter:description" content={siteInfo.description || "Descripción por defecto"}>
+    <meta name="twitter:image" content={siteInfo.description || "/default-image.jpg"}>
+
+    <link rel="icon favicon" href={siteInfo.icon || "/favicon.ico"} type="image/x-icon">
+    <link rel="canonical" href={siteInfo.url || "https://tusitio.com"} />
+    <link rel="preload" as="image" href={dataFrontPage.imageFrontPage} />
+    <link rel="preload" as="image" href={dataFrontPage.imageSectionArisha} />
+    <link rel="preload" as="image" href="images/logo.webp" />
+    <title>{siteInfo.title}</title>
     <ClientRouter />
     <link rel="stylesheet" href="/src/assets/styles/main.css" />
     <link
@@ -40,6 +73,7 @@ import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    
   </head>
 
   <body>

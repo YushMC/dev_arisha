@@ -1,12 +1,46 @@
-<aside class="fl-column">
+---
+import infoArisha from "./../assets/jsons/infoArisha.json"
+
+const telefono = infoArisha[1].whatsapp;
+---
+
+<aside class="fl-column" id="contacto">
   <h2>Contacto</h2>
-  <h4>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates id
-    ratione perspiciatis nulla enim illum!
-  </h4>
-  <input type="text" placeholder="Nombre" />
-  <textarea placeholder="Mensaje" maxlength="200"></textarea>
+  <input type="text" placeholder="Nombre" id="name"/>
+  <textarea placeholder="Mensaje" maxlength="200" id="message"></textarea>
+  <a id="enviar-link" data-telefono={telefono} href="#" target="_blank">
+    <span>Enviar</span>
+  <i class="bi bi-arrow-right"></i>
+  </a>
 </aside>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nameInput = document.getElementById('name')
+    const messageInput = document.getElementById('message')
+    const enviarLink = document.getElementById('enviar-link')
+
+    if (enviarLink) {
+      enviarLink.addEventListener('click', (e) => {
+        const nombre = nameInput ? (nameInput as HTMLInputElement).value.trim() : ''
+        const mensaje = messageInput ? (messageInput as HTMLTextAreaElement).value.trim() : ''
+
+      if (!nombre || !mensaje) {
+        e.preventDefault()
+        alert('Por favor, completa ambos campos.')
+        return
+      }
+
+      const telefono = enviarLink.dataset.telefono
+      const url = `https://wa.me/${telefono}?text=Hola,%20soy%20${encodeURIComponent(nombre)}!,%20${encodeURIComponent(mensaje)}`
+
+        if (enviarLink) {
+          (enviarLink as HTMLAnchorElement).href = url;
+        }
+      });
+      }
+    });
+</script>
 
 <style>
   aside {
@@ -49,5 +83,50 @@
     aside {
       width: 80%;
     }
+  }
+  a {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space);
+    padding-inline: var(--space);
+    border-bottom: solid 2px var(--secondaryColorDark);
+    transition: all 0.3s linear;
+    transform: scale(1);
+  }
+  a:hover {
+    border-bottom: solid 2px var(--secondaryColorLight);
+    transform: scale(1.1);
+  }
+  a::after {
+    content: "";
+    position: absolute;
+    width: 8%;
+    height: 100%;
+    background: var(--secondaryColorDark);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s linear;
+  }
+  a:hover::after {
+    width: 100%;
+  }
+  a span {
+    color: var(--secondaryColorDark);
+    transition: all 0.3s linear;
+  }
+  a:hover span {
+    color: #fff;
+  }
+  a i {
+    color: var(--secondaryColorDark);
+    font-size: calc(var(--space) * 2);
+    transition: all 0.3s linear;
+  }
+  a:hover i {
+    color: #fff;
   }
 </style>

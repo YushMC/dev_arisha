@@ -1,14 +1,21 @@
 ---
 import LinksMain from "./linksMain.astro";
+import frontPage from "./../assets/jsons/imagesSections.json"
+
+interface FRONT_PAGE{
+  imageFrontPage: string
+}
+
+const dataFrontPage: FRONT_PAGE = frontPage
 ---
 
-<div class="frontPage">
+<div class="frontPage" id="inicio">
   <div class="cuadrado"></div>
   <div class="gd-2">
     <div class="container_image">
       <div class="imagen">
         <img
-          src="https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+          src={dataFrontPage.imageFrontPage}
           alt=""
         />
       </div>
@@ -17,7 +24,7 @@ import LinksMain from "./linksMain.astro";
       <h1>Tu Negocio que quieres</h1>
       <h2>De manera simple</h2>
       <div class="fl-end-wrap">
-        <LinksMain link="#" text="Comencemos" />
+        <LinksMain link="#arisha" text="Comencemos" />
       </div>
     </div>
   </div>

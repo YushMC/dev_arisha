@@ -1,18 +1,23 @@
+---
+import infoSection2 from "./../../assets/jsons/section2.json"
+import images from "./../../assets/jsons/imagesSections.json"
+
+const allImages = images;
+const frase1 = infoSection2[0];
+const frase2 = infoSection2[1];
+---
 <section>
   <picture>
-    <img src="/images/compu.jpg" alt="" />
+    <img src={allImages.imageSection2} alt="" />
   </picture>
   <aside class="fl-column">
     <h2>No estas solo en este viaje</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-      iusto veniam culpa libero iure architecto dolorum voluptatum tenetur
-      dolores perspiciatis?
+      {frase1.phrase}
     </p>
     <h2>Tu próximo paso</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi,
-      sapiente!
+      {frase2.phrase}
     </p>
   </aside>
 </section>

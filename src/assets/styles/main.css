@@ -18,6 +18,9 @@
   --space: 16px;
   --blur: blur(1px);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 /* incian estilos globales */
 h1,
